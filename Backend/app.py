@@ -151,6 +151,11 @@ def send_email(subject, body):
         return False
 
 
+# --- ROUTE 0: HEALTH CHECK (The Front Door) ---
+@app.route('/', methods=['GET'])
+def home():
+    return "Mathemagix API is running perfectly! 🚀"
+
 # --- ROUTE 1: CONTACT FORM ENQUIRY ---
 @app.route('/api/contact', methods=['POST'])
 def handle_contact():
