@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Knowledge Hub - Mathemagix Blog</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,700&family=Barlow+Condensed:wght@700;800;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* CORE CSS */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --red: #D0021B; --dark: #1a1a2e; --white: #ffffff; --gray: #6b7280; --gray-light: #e5e7eb; --text: #111827; }
+    body { font-family: 'DM Sans', sans-serif; color: var(--text); background: var(--white); }
+    
+    /* Navbar */
+    nav { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: 1px solid rgba(0,0,0,.07); box-shadow: 0 2px 20px rgba(0,0,0,.06); }
+    .nav-inner { max-width: 1280px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0 2rem; height: 70px; }
+    .logo { display: flex; align-items: center; gap: .5rem; text-decoration: none; }
+    .logo-text { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: 2rem; letter-spacing: -.5px; color: var(--dark); }
+    .logo-text span { color: var(--red); }
+    .logo-sub { font-size: .65rem; font-weight: 600; color: var(--gray); text-transform: uppercase; margin-top: 2px; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { text-decoration: none; font-size: .9rem; font-weight: 600; color: var(--gray); transition: color .2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--red); }
+    
+    /* Layout */
+    .container { max-width: 1280px; margin: 0 auto; padding: 4rem 2rem; }
+    .page-title { font-family: 'Barlow', sans-serif; font-size: 2.5rem; font-weight: 900; color: var(--dark); margin-bottom: 1rem; }
+    .page-subtitle { color: var(--gray); font-size: 1.1rem; margin-bottom: 3rem; }
+    
+    /* Blog Grid */
+    .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap: 1.5rem; }
+    .blog-card { border-radius: 14px; overflow: hidden; border: 1.5px solid var(--gray-light); transition: all .25s; display: flex; flex-direction: column; }
+    .blog-card:hover { border-color: var(--red); box-shadow: 0 8px 28px rgba(208,2,27,.09); transform: translateY(-4px); }
+    .blog-thumb { height: 180px; background: linear-gradient(135deg, #e8eaf0, #d0d4de); position: relative; }
+    .blog-thumb img { width: 100%; height: 100%; object-fit: cover; }
+    .blog-body { padding: 1.4rem; flex-grow: 1; display: flex; flex-direction: column; }
+    .blog-tag { font-size: .7rem; font-weight: 700; color: var(--red); text-transform: uppercase; letter-spacing: 1px; }
+    .blog-body h3 { font-size: 1.1rem; font-weight: 700; color: var(--dark); margin: .5rem 0 .5rem; line-height: 1.4; }
+    .blog-body p { font-size: .85rem; color: var(--gray); line-height: 1.6; margin-bottom: 1rem; flex-grow: 1; }
+    .blog-meta { display:flex; justify-content:space-between; align-items:center; border-top: 1px solid var(--gray-light); padding-top: .8rem;}
+    .blog-date { font-size: .75rem; color: var(--gray); }
+    .read-more { font-size: .8rem; font-weight: 700; color: var(--red); text-decoration: none; }
+    .read-more:hover { text-decoration: underline; }
+
+    @media (max-width: 768px) { .nav-links { display: none; } }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <div class="logo-stack">
+        <div class="logo-text">M<span>A</span>THEM<span>A</span>GIX</div>
+        <div class="logo-sub">IIT-JEE (Mains+Advanced) Hub</div>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="all-courses.html">Courses</a></li>
+      <li><a href="blog.html" class="active">Blog</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+  <h1 class="page-title">Knowledge Hub</h1>
+  <p class="page-subtitle">Dive into our latest articles, study strategies, and exam preparation tips.</p>
+  
+  <div class="blog-grid">
+    <div class="blog-card">
+      <div class="blog-thumb"><img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=400&q=80" alt="Math"></div>
+      <div class="blog-body">
+        <div class="blog-tag">JEE Strategy</div>
+        <h3>Master Calculus for JEE Advanced in 30 Days</h3>
+        <p>A structured 30-day plan to cover all essential calculus topics with practice problems.</p>
+        <div class="blog-meta"><span class="blog-date">May 20, 2025</span><a href="blog-post-1.html" class="read-more">Read More →</a></div>
+      </div>
+    </div>
+    <div class="blog-card">
+      <div class="blog-thumb"><img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=400&q=80" alt="Books"></div>
+      <div class="blog-body">
+        <div class="blog-tag">Board Exams</div>
+        <h3>10 Mistakes Students Make in Board Exams</h3>
+        <p>Common errors in Class 12 boards and techniques to eliminate them from answer sheets.</p>
+        <div class="blog-meta"><span class="blog-date">May 10, 2025</span><a href="blog-post-2.html" class="read-more">Read More →</a></div>
+      </div>
+    </div>
+    <div class="blog-card">
+      <div class="blog-thumb"><img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=400&q=80" alt="Brain"></div>
+      <div class="blog-body">
+        <div class="blog-tag">Study Tips</div>
+        <h3>Spaced Repetition in Math Learning</h3>
+        <p>How leveraging memory science helps retain complex formulae and solve problems faster.</p>
+        <div class="blog-meta"><span class="blog-date">April 28, 2025</span><a href="blog-post-3.html" class="read-more">Read More →</a></div>
+      </div>
+    </div>
+    <div class="blog-card">
+      <div class="blog-thumb"><img src="https://images.unsplash.com/photo-1614035048259-335bdfa14ff2?auto=format&fit=crop&w=400&q=80" alt="Physics"></div>
+      <div class="blog-body">
+        <div class="blog-tag">Physics Prep</div>
+        <h3>Best Physics Books for Mains & Advanced</h3>
+        <p>We review the top textbooks that every JEE aspirant must solve for Physics.</p>
+        <div class="blog-meta"><span class="blog-date">April 15, 2025</span><a href="blog-post-4.html" class="read-more">Read More →</a></div>
+      </div>
+    </div>
+    <div class="blog-card">
+      <div class="blog-thumb"><img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=400&q=80" alt="Chemistry"></div>
+      <div class="blog-body">
+        <div class="blog-tag">Chemistry</div>
+        <h3>Organic Chemistry: Memorization Tricks</h3>
+        <p>Struggling with mechanisms? Here are the ultimate mind-maps for Organic Chemistry.</p>
+        <div class="blog-meta"><span class="blog-date">April 05, 2025</span><a href="blog-post-5.html" class="read-more">Read More →</a></div>
+      </div>
+    </div>
+    <div class="blog-card">
+      <div class="blog-thumb"><img src="https://images.unsplash.com/photo-1495364141860-b0d03dea4557?auto=format&fit=crop&w=400&q=80" alt="Clock"></div>
+      <div class="blog-body">
+        <div class="blog-tag">Exam Hacks</div>
+        <h3>Time Management Strategies in the Exam Hall</h3>
+        <p>How to allocate your 3 hours between Physics, Chemistry, and Math during JEE.</p>
+        <div class="blog-meta"><span class="blog-date">Mar 22, 2025</span><a href="blog-post-6.html" class="read-more">Read More →</a></div>
+      </div>
+    </div>
+    <div class="blog-card">
+      <div class="blog-thumb"><img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=400&q=80" alt="Kids study"></div>
+      <div class="blog-body">
+        <div class="blog-tag">Foundation</div>
+        <h3>Why Start Foundation Courses in Class 8?</h3>
+        <p>Discover the immense benefits of early preparation for competitive exams like Olympiads.</p>
+        <div class="blog-meta"><span class="blog-date">Mar 10, 2025</span><a href="blog-post-7.html" class="read-more">Read More →</a></div>
+      </div>
+    </div>
+    <div class="blog-card">
+      <div class="blog-thumb"><img src="https://images.unsplash.com/photo-1546410531-ea4cea477149?auto=format&fit=crop&w=400&q=80" alt="Desk"></div>
+      <div class="blog-body">
+        <div class="blog-tag">Balance</div>
+        <h3>Balancing CBSE Boards and JEE Prep</h3>
+        <p>Tips from toppers on how to strike the perfect balance between board exams and JEE.</p>
+        <div class="blog-meta"><span class="blog-date">Feb 28, 2025</span><a href="blog-post-8.html" class="read-more">Read More →</a></div>
+      </div>
+    </div>
+    <div class="blog-card">
+      <div class="blog-thumb"><img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=400&q=80" alt="Engineering"></div>
+      <div class="blog-body">
+        <div class="blog-tag">Career</div>
+        <h3>Top 5 Emerging Engineering Branches in IITs</h3>
+        <p>Beyond Computer Science: A look at AI, Data Science, and Robotics streams.</p>
+        <div class="blog-meta"><span class="blog-date">Feb 15, 2025</span><a href="blog-post-9.html" class="read-more">Read More →</a></div>
+      </div>
+    </div>
+    <div class="blog-card">
+      <div class="blog-thumb"><img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=400&q=80" alt="Data Analytics"></div>
+      <div class="blog-body">
+        <div class="blog-tag">Self Assessment</div>
+        <h3>How to Deeply Analyze Mock Test Results</h3>
+        <p>Taking tests isn't enough. Learn the framework to identify your weak spots effectively.</p>
+        <div class="blog-meta"><span class="blog-date">Feb 02, 2025</span><a href="blog-post-10.html" class="read-more">Read More →</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

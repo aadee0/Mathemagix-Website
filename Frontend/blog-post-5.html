@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Master Calculus for JEE Advanced - Mathemagix</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,700&family=Barlow+Condensed:wght@700;800;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* CORE CSS */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --red: #D0021B; --dark: #1a1a2e; --white: #ffffff; --gray: #6b7280; --gray-light: #e5e7eb; --text: #111827; }
+    body { font-family: 'DM Sans', sans-serif; color: var(--text); background: var(--white); }
+    
+    /* Navbar */
+    nav { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: 1px solid rgba(0,0,0,.07); box-shadow: 0 2px 20px rgba(0,0,0,.06); }
+    .nav-inner { max-width: 1280px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0 2rem; height: 70px; }
+    .logo { display: flex; align-items: center; gap: .5rem; text-decoration: none; }
+    .logo-text { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: 2rem; letter-spacing: -.5px; color: var(--dark); }
+    .logo-text span { color: var(--red); }
+    .logo-sub { font-size: .65rem; font-weight: 600; color: var(--gray); text-transform: uppercase; margin-top: 2px; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { text-decoration: none; font-size: .9rem; font-weight: 600; color: var(--gray); transition: color .2s; }
+    .nav-links a:hover { color: var(--red); }
+    
+    /* Article Layout */
+    .article-container { max-width: 800px; margin: 0 auto; padding: 4rem 2rem; }
+    .back-link { color: var(--red); text-decoration: none; font-weight: 700; font-size: .9rem; display: inline-flex; margin-bottom: 2rem; }
+    .back-link:hover { text-decoration: underline; }
+    
+    .article-tag { font-size: .8rem; font-weight: 700; color: var(--red); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1rem; display: inline-block; }
+    .article-title { font-family: 'Barlow', sans-serif; font-size: 2.8rem; font-weight: 900; color: var(--dark); line-height: 1.2; margin-bottom: 1rem; }
+    .article-meta { color: var(--gray); font-size: .9rem; margin-bottom: 2rem; border-bottom: 1px solid var(--gray-light); padding-bottom: 1.5rem; }
+    
+    .article-img { width: 100%; height: 400px; object-fit: cover; border-radius: 12px; margin-bottom: 2.5rem; }
+    
+    .article-content { font-size: 1.05rem; line-height: 1.8; color: var(--text); }
+    .article-content h2 { font-family: 'Barlow', sans-serif; font-size: 1.8rem; font-weight: 800; color: var(--dark); margin: 2.5rem 0 1rem; }
+    .article-content p { margin-bottom: 1.5rem; }
+    .article-content ul { margin-bottom: 1.5rem; padding-left: 1.5rem; }
+    .article-content li { margin-bottom: .5rem; }
+
+    @media (max-width: 768px) { 
+        .nav-links { display: none; } 
+        .article-title { font-size: 2.2rem; }
+        .article-img { height: 250px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <div class="logo-stack">
+        <div class="logo-text">M<span>A</span>THEM<span>A</span>GIX</div>
+        <div class="logo-sub">IIT-JEE (Mains+Advanced) Hub</div>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="all-courses.html">Courses</a></li>
+      <li><a href="blog.html">Blog</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="article-container">
+  
+  <a href="blog.html" class="back-link">← Back to all articles</a>
+  <span class="article-tag">Chemistry</span>
+  <h1 class="article-title">Organic Chemistry: Memorization Tricks</h1>
+  <div class="article-meta">Published on April 05, 2025 • By Mathemagix Team</div>
+  <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=1200&q=80" alt="Chemistry" class="article-img">
+  
+  <div class="article-content">
+    <p>Organic chemistry is often polarizing—students either love it or dread it. The key to moving from dread to love is shifting from "rote memorization" to "understanding electron flow."</p>
+    
+    <h2>1. Stop Memorizing, Start Mapping</h2>
+    <p>Never memorize reactions in isolation. Create "Reaction Maps" on large chart papers. Start with a central compound (like Benzene or an Alcohol) and draw arrows radiating outward to show how it converts into other functional groups. Seeing the interconnectedness makes recall effortless.</p>
+
+    <h2>2. Master the Reagents</h2>
+    <p>Instead of learning 50 different reactions, learn the function of specific reagents. If you know that <em>LiAlH4</em> is a strong reducing agent that will reduce almost anything, you don't need to memorize its effect on an aldehyde vs. a carboxylic acid individually.</p>
+
+    <h2>3. The "Name Reaction" Cheat Sheet</h2>
+    <p>Aldol Condensation, Cannizzaro, Friedel-Crafts—these are staples of JEE. Dedicate a specific notebook exclusively for name reactions. Write the mechanism, the exact reagent conditions, and 2 exceptions for each. Review this notebook every Sunday morning.</p>
+  </div>
+</div>
+
+</body>
+</html>

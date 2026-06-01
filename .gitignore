@@ -1,0 +1,12 @@
+# Protect Environment Variables (CRITICAL)
+backend/.env
+.env
+
+# Python Cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Mac / Windows system files
+.DS_Store
+Thumbs.db

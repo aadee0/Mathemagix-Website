@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mathemagix | Mathematics Coaching</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --primary:#2563eb;
+    --secondary:#1e40af;
+    --light:#f8fafc;
+    --dark:#0f172a;
+    --text:#475569;
+    --white:#ffffff;
+    --border:#e2e8f0;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:var(--white);
+    color:var(--dark);
+    line-height:1.6;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+header{
+    position:sticky;
+    top:0;
+    background:rgba(255,255,255,0.95);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border);
+    z-index:1000;
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 0;
+}
+
+.logo{
+    font-size:1.8rem;
+    font-weight:700;
+    color:var(--primary);
+}
+
+.logo span{
+    color:var(--dark);
+}
+
+.nav-links{
+    display:flex;
+    gap:25px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:var(--dark);
+    font-weight:500;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:var(--primary);
+}
+
+.hero{
+    padding:100px 0;
+    background:linear-gradient(135deg,#eff6ff,#ffffff);
+}
+
+.hero-content{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:center;
+}
+
+.hero-text h1{
+    font-size:3rem;
+    line-height:1.2;
+    margin-bottom:20px;
+}
+
+.hero-text p{
+    color:var(--text);
+    margin-bottom:30px;
+    font-size:1.05rem;
+}
+
+.btn{
+    display:inline-block;
+    background:var(--primary);
+    color:white;
+    text-decoration:none;
+    padding:14px 28px;
+    border-radius:10px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:var(--secondary);
+}
+
+.hero-card{
+    background:white;
+    border-radius:20px;
+    padding:40px;
+    box-shadow:0 10px 40px rgba(0,0,0,0.08);
+    text-align:center;
+}
+
+.hero-card h2{
+    color:var(--primary);
+    font-size:4rem;
+}
+
+section{
+    padding:80px 0;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.section-title h2{
+    font-size:2.2rem;
+}
+
+.section-title p{
+    color:var(--text);
+    margin-top:10px;
+}
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.card{
+    padding:30px;
+    border:1px solid var(--border);
+    border-radius:15px;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 8px 30px rgba(0,0,0,0.08);
+}
+
+.card h3{
+    margin-bottom:12px;
+}
+
+.card p{
+    color:var(--text);
+}
+
+.courses{
+    background:var(--light);
+}
+
+.course-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.course{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.05);
+}
+
+.course h3{
+    margin-bottom:10px;
+}
+
+.course p{
+    color:var(--text);
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:20px;
+    text-align:center;
+}
+
+.stat{
+    padding:25px;
+}
+
+.stat h3{
+    font-size:2.5rem;
+    color:var(--primary);
+}
+
+.contact{
+    background:var(--light);
+}
+
+.contact-wrapper{
+    max-width:700px;
+    margin:auto;
+}
+
+form{
+    display:grid;
+    gap:15px;
+}
+
+input,
+textarea{
+    padding:14px;
+    border:1px solid var(--border);
+    border-radius:10px;
+    outline:none;
+}
+
+textarea{
+    resize:none;
+    height:140px;
+}
+
+button{
+    border:none;
+    cursor:pointer;
+}
+
+footer{
+    background:var(--dark);
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+.success-message{
+    display:none;
+    margin-top:15px;
+    color:green;
+    font-weight:600;
+}
+
+@media(max-width:768px){
+
+.hero-content{
+    grid-template-columns:1fr;
+}
+
+.hero-text h1{
+    font-size:2.3rem;
+}
+
+.nav-links{
+    display:none;
+}
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="container">
+<nav>
+<div class="logo">Mathema<span>gix</span></div>
+
+<div class="nav-links">
+<a href="#about">About</a>
+<a href="#courses">Courses</a>
+<a href="#results">Results</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
+</div>
+</header>
+
+<section class="hero">
+<div class="container">
+
+<div class="hero-content">
+
+<div class="hero-text">
+<h1>Master Mathematics With Confidence</h1>
+
+<p>
+Mathemagix helps students build strong mathematical foundations through
+concept-based learning, personalized guidance, and consistent practice.
+</p>
+
+<a href="#contact" class="btn">Book a Free Demo</a>
+</div>
+
+<div class="hero-card">
+<h2>95%</h2>
+<p>Average Student Improvement</p>
+<br>
+<h3>Mathematics Made Simple</h3>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section id="about">
+<div class="container">
+
+<div class="section-title">
+<h2>Why Choose Mathemagix?</h2>
+<p>Focused, structured, and student-friendly mathematics coaching.</p>
+</div>
+
+<div class="features">
+
+<div class="card">
+<h3>Concept Clarity</h3>
+<p>
+Learn mathematics through practical understanding rather than memorization.
+</p>
+</div>
+
+<div class="card">
+<h3>Expert Guidance</h3>
+<p>
+Get mentorship from experienced mathematics educators.
+</p>
+</div>
+
+<div class="card">
+<h3>Regular Assessments</h3>
+<p>
+Track progress with tests, worksheets, and performance analysis.
+</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section id="courses" class="courses">
+
+<div class="container">
+
+<div class="section-title">
+<h2>Our Courses</h2>
+<p>Programs designed for school and competitive exam students.</p>
+</div>
+
+<div class="course-grid">
+
+<div class="course">
+<h3>Class 6 - 8</h3>
+<p>
+Build strong arithmetic, algebra, geometry, and logical reasoning skills.
+</p>
+</div>
+
+<div class="course">
+<h3>Class 9 - 10</h3>
+<p>
+Comprehensive preparation aligned with school curriculum and board exams.
+</p>
+</div>
+
+<div class="course">
+<h3>Class 11 - 12</h3>
+<p>
+Advanced mathematics covering algebra, calculus, probability, and statistics.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="results">
+<div class="container">
+
+<div class="section-title">
+<h2>Our Achievements</h2>
+<p>Helping students achieve excellence in mathematics.</p>
+</div>
+
+<div class="stats">
+
+<div class="stat">
+<h3>500+</h3>
+<p>Students Trained</p>
+</div>
+
+<div class="stat">
+<h3>95%</h3>
+<p>Success Rate</p>
+</div>
+
+<div class="stat">
+<h3>10+</h3>
+<p>Years Experience</p>
+</div>
+
+<div class="stat">
+<h3>100+</h3>
+<p>Top Scores</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section id="contact" class="contact">
+
+<div class="container">
+
+<div class="section-title">
+<h2>Contact Us</h2>
+<p>Book a free counseling session today.</p>
+</div>
+
+<div class="contact-wrapper">
+
+<form id="contactForm">
+
+<input
+type="text"
+placeholder="Your Name"
+required>
+
+<input
+type="email"
+placeholder="Your Email"
+required>
+
+<input
+type="tel"
+placeholder="Phone Number"
+required>
+
+<textarea
+placeholder="Tell us about your requirements"></textarea>
+
+<button class="btn" type="submit">
+Submit
+</button>
+
+</form>
+
+<div class="success-message" id="successMessage">
+Thank you! We will contact you shortly.
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+<p>
+© 2026 Mathemagix. All Rights Reserved.
+</p>
+</footer>
+
+<script>
+document
+.getElementById("contactForm")
+.addEventListener("submit", function(e){
+
+e.preventDefault();
+
+document.getElementById("successMessage")
+.style.display = "block";
+
+this.reset();
+});
+</script>
+
+</body>
+</html>
