@@ -140,7 +140,8 @@ def send_email(subject, body):
     msg.attach(MIMEText(body, 'plain'))
 
     try:
-        server = smtplib.SMTP('smtp.gmail.com', 587)
+        # Added timeout=5 so it catches the Render block instead of crashing!
+        server = smtplib.SMTP('smtp.gmail.com', 587, timeout=5)
         server.starttls()
         server.login(sender_email, sender_password)
         server.send_message(msg)
@@ -178,13 +179,19 @@ def handle_contact():
     })
 
     # 2. Send Email
-    email_body = f"New Enquiry!\nName: {name}\nPhone: {phone}\nEmail: {email}\nCourse: {course}\nMessage: {message}"
+    # email_body = f"New Enquiry!\nName: {name}\nPhone: {phone}\nEmail: {email}\nCourse: {course}\nMessage: {message}"
     
-    if send_email("Mathemagix: New Contact Enquiry", email_body):
-        return jsonify({"status": "success", "message": "Enquiry submitted successfully!"}), 200
-    else:
-        return jsonify({"status": "error", "message": "Failed to send enquiry."}), 500
+    # if send_email("Mathemagix: New Contact Enquiry", email_body):
+    #     return jsonify({"status": "success", "message": "Enquiry submitted successfully!"}), 200
+    # else:
+    #     return jsonify({"status": "error", "message": "Failed to send enquiry."}), 500 
 
+    # 2. Send Email (Will likely fail on Render Free Tier, but that's okay!)
+    email_body = f"New Enquiry!\nName: {name}\nPhone: {phone}\nEmail: {email}\nCourse: {course}\nMessage: {message}"
+    send_email("Mathemagix: New Contact Enquiry", email_body)
+    
+    # 3. Always return success to the student because the DB save worked!
+    return jsonify({"status": "success", "message": "Enquiry submitted successfully!"}), 200
 
 # --- ROUTE 2: BOOK DEMO FORM ---
 @app.route('/api/demo', methods=['POST'])
@@ -203,13 +210,20 @@ def handle_demo():
         "date_submitted": datetime.datetime.now()
     })
 
-    # 2. Send Email
-    email_body = f"New Demo Booking!\nStudent Name: {name}\nPhone: {phone}\nTarget Course: {course}"
+    # # 2. Send Email
+    # email_body = f"New Demo Booking!\nStudent Name: {name}\nPhone: {phone}\nTarget Course: {course}"
     
-    if send_email("Mathemagix: NEW DEMO BOOKING", email_body):
-        return jsonify({"status": "success", "message": "Demo booked successfully!"}), 200
-    else:
-        return jsonify({"status": "error", "message": "Failed to book demo."}), 500
+    # if send_email("Mathemagix: NEW DEMO BOOKING", email_body):
+    #     return jsonify({"status": "success", "message": "Demo booked successfully!"}), 200
+    # else:
+    #     return jsonify({"status": "error", "message": "Failed to book demo."}), 500 
+
+    # 2. Send Email (Will likely fail on Render Free Tier, but that's okay!)
+    email_body = f"New Demo Booking!\nStudent Name: {name}\nPhone: {phone}\nTarget Course: {course}"
+    send_email("Mathemagix: NEW DEMO BOOKING", email_body)
+    
+    # 3. Always return success to the student because the DB save worked!
+    return jsonify({"status": "success", "message": "Demo booked successfully!"}), 200
 
 
 if __name__ == '__main__':
